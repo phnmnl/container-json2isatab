@@ -6,4 +6,5 @@ try:
     from isatools.convert import json2isatab
 except ImportError as e:
     raise RuntimeError("Could not import isatools package")
-json2isatab.convert(open(src_json), target_dir)
+with open(src_json) as in_fp:
+    json2isatab.convert(in_fp, target_dir)
