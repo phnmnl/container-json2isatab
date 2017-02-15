@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import sys
 import os
 src_json = sys.argv[1]
