@@ -6,8 +6,8 @@ wget --no-check-certificate https://raw.githubusercontent.com/ISA-tools/ISAdatas
 run_json2tab.py ./BII-S-3.json /tmp/
 
 # check that files were created
-if ! [ -e "/tmp/i_investigation.txt" ]; then
-	echo "Output ISA investigation file doesn't exist"
+if ! [ -e "/out.zip" ]; then
+	echo "Output ISArchive does not exist"
 	exit 1
 fi
 
