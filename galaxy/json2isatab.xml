@@ -2,7 +2,7 @@
 <tool id="json2isatab" name="json2isatab" version="1.0">
   <description>Converts an ISA-JSON file to an ISA-Tab ZIP archive</description>
   <command><![CDATA[
-    run_tab2json.py $isa_file
+    run_json2tab.py $isa_file
   ]]>
   </command>
   <inputs>
