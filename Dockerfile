@@ -7,11 +7,11 @@ LABEL software.version="0.8.0"
 LABEL version="0.1"
 LABEL software="json2isatab"
 
-RUN apt-get update && apt-get install -y --no-install-recommends build-essential libssl-dev libffi-dev python-dev python3-pip && \
+RUN apt-get update && apt-get install -y --no-install-recommends build-essential libssl-dev libffi-dev python3-dev python3-pip && \
     pip3 install --upgrade pip && \
     pip3 install -U setuptools && \
     pip3 install isatools==0.8.0 && \
-    apt-get purge -y python3-pip gcc libxml2-dev libxslt-dev python3-lxml build-essential libssl-dev libffi-dev python-dev && \
+    apt-get purge -y python3-pip gcc libxml2-dev libxslt-dev python3-lxml build-essential libssl-dev libffi-dev python3-dev && \
     apt-get install --no-install-recommends python3 && \
     apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
