@@ -15,7 +15,7 @@ if not os.path.exists(src_json):
 
 with open(src_json) as in_fp:
     tmpdir = tempfile.mkdtemp()
-    json2isatab.convert(in_fp, tmpdir, validate_first=False)
+    json2isatab.convert(json_fp=in_fp, path=tmpdir, validate_first=False)
     if tmpdir is not None:
         shutil.make_archive('out', 'zip', tmpdir)
         shutil.rmtree(tmpdir)

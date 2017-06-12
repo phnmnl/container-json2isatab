@@ -4,7 +4,7 @@ MAINTAINER PhenoMeNal-H2020 Project ( phenomenal-h2020-users@googlegroups.com )
 
 LABEL Description="Convert ISA JSON format file to ISA tab"
 LABEL software.version="0.8.0"
-LABEL version="0.1"
+LABEL version="0.2"
 LABEL software="json2isatab"
 
 RUN apt-get update && apt-get install -y --no-install-recommends build-essential libssl-dev libffi-dev python3-dev python3-pip && \
