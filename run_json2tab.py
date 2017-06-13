@@ -13,7 +13,7 @@ if not os.path.exists(src_json):
     print("File path to ISA-JSON file \"{}\" does not exist".format(src_json))
     sys.exit(0)
 
-with open(src_json) as in_fp:
+with open(src_json, encoding='utf-8') as in_fp:
     tmpdir = tempfile.mkdtemp()
     json2isatab.convert(json_fp=in_fp, path=tmpdir, validate_first=False)
     if tmpdir is not None:
