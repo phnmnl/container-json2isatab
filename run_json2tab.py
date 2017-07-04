@@ -2,8 +2,9 @@
 
 import sys
 import os
+import shutil
+import tempfile
 src_json = sys.argv[1]
-target_dir = sys.argv[2]
 try:
     from isatools.convert import json2isatab
 except ImportError as e:
@@ -12,5 +13,11 @@ if not os.path.exists(src_json):
     print("File path to ISA-JSON file \"{}\" does not exist".format(src_json))
     sys.exit(0)
 
-with open(src_json) as in_fp:
-    json2isatab.convert(in_fp, target_dir)
+with open(src_json, encoding='utf-8') as in_fp:
+    tmpdir = tempfile.mkdtemp()
+    json2isatab.convert(json_fp=in_fp, path=tmpdir, validate_first=False)
+    if tmpdir is not None:
+        shutil.make_archive('out', 'zip', tmpdir)
+        shutil.rmtree(tmpdir)
+        print("ISA-Tab written to out.zip")
+
