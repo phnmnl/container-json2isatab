@@ -1,7 +1,7 @@
 ![Logo](isa-api_logo.png)
 
 # json2isatab: ISA-JSON to ISA-Tab Converter
-Version: 0.5.0
+Version: 0.8.3
 
 ## Short Description
 
