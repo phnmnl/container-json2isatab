@@ -1,6 +1,6 @@
 #!/bin/bash
 
-apt-get update && apt-get install -y --no-install-recommends wget
+apk update && apk add ca-certificates && update-ca-certificates && apk add wget zip
 wget --no-check-certificate https://raw.githubusercontent.com/ISA-tools/ISAdatasets/master/json/BII-S-3/BII-S-3.json
 
 run_json2tab.py ./BII-S-3.json
