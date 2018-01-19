@@ -4,7 +4,7 @@ MAINTAINER PhenoMeNal-H2020 Project ( phenomenal-h2020-users@googlegroups.com )
 
 LABEL Description="Convert ISA JSON format file to ISA tab"
 LABEL software.version="0.9.4"
-LABEL version="0.4"
+LABEL version="0.5"
 LABEL software="json2isatab"
 
 
