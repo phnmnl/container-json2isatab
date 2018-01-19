@@ -18,7 +18,17 @@ converter takes a valid ISA-JSON document and converts it into a valid ISA-Tab f
 
 ## Functionality
 
-- Other Tools
+- Data Management / Study Metadata Format Conversion
+
+## Approaches
+
+- Metabolomics
+- Isotopic Labelling Analysis
+
+## Instrument Data Types
+
+- MS
+- NMR
 
 ## Tool Authors
 
@@ -27,6 +37,7 @@ converter takes a valid ISA-JSON document and converts it into a valid ISA-Tab f
 ## Container Contributors
 
 - [David Johnson](https://github.com/djcomlab) (University of Oxford)
+- [Philippe Rocca-Serra](https://github.com/proccaserra) (University of Oxford)
 
 ## Website
 
