@@ -15,5 +15,3 @@ if not os.path.exists(src_json):
 with open(src_json, encoding='utf-8') as in_fp:
     json2isatab.convert(
         json_fp=in_fp, path=os.path.dirname(src_json), validate_first=False)
-
-
