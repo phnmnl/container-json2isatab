@@ -1,7 +1,14 @@
 #!/usr/bin/env python3
 import sys
 import os
+import logging
 
+from isatools import config
+from isatools import isajson
+from isatools import isatab
+
+logging.basicConfig(level=config.log_level)
+log = logging.getLogger(__name__)
 
 src_json = sys.argv[1]
 try:
@@ -12,6 +19,12 @@ if not os.path.exists(src_json):
     print('File path to ISA-JSON file \'{}\' does not exist'.format(src_json))
     sys.exit(0)
 
-with open(src_json, encoding='utf-8') as in_fp:
-    json2isatab.convert(
-        json_fp=in_fp, path=os.path.dirname(src_json), validate_first=False)
+with open(src_json, encoding='utf-8') as json_fp:
+    path = os.path.dirname(src_json)
+    log.info("Loading ISA-JSON from %s", json_fp.name)
+    isa_obj = isajson.load(fp=json_fp)
+    log.info("Dumping ISA-Tab to %s", path)
+    isatab.dump(
+        isa_obj=isa_obj, output_path=path, i_file_name='i_investigation.txt')
+    #  copy data files across from source directory where JSON is located
+    log.info("Copying data files from source to target")
