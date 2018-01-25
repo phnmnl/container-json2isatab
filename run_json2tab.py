@@ -11,6 +11,7 @@ logging.basicConfig(level=config.log_level)
 log = logging.getLogger(__name__)
 
 src_json = sys.argv[1]
+path = sys.argv[2]
 try:
     from isatools.convert import json2isatab
 except ImportError as e:
@@ -20,7 +21,6 @@ if not os.path.exists(src_json):
     sys.exit(0)
 
 with open(src_json, encoding='utf-8') as json_fp:
-    path = os.path.dirname(src_json)
     log.info("Loading ISA-JSON from %s", json_fp.name)
     isa_obj = isajson.load(fp=json_fp)
     log.info("Dumping ISA-Tab to %s", path)
